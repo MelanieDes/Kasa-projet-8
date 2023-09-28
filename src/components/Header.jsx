@@ -3,9 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
             <div className="navigation">
-                <ul>
+                <ul className='navigation-container'>
                     <NavLink to="/">
                         <li>Accueil</li>
                     </NavLink>
@@ -14,8 +13,6 @@ const Header = () => {
                     </NavLink>                    
                 </ul>
             </div>
-            
-        </div>
     );
 };
 

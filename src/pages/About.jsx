@@ -1,14 +1,18 @@
 import React from 'react';
-import Header from '../components/Header';
-import Logo from '../components/Logo';
+import BannerAbout from '../components/BannerAbout';
+import DropDown from '../components/DropDown';
+import collapseData from '../data/Collapse.json'
 
-const About = () => {
+const About = () => {       
+    
     return (
         <div>
-            <Logo />
-            <Header />
-            <h1>A propos</h1>
-        </div>
+            <BannerAbout />
+            {collapseData.map((item) => (
+                <DropDown key={item.id} title={item.title} content={item.content} />
+            ))}
+        </div>     
+         
     );
 };
 

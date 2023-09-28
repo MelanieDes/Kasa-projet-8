@@ -1,16 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import Logo from '../components/Logo';
-import Banner from '../components/Banner';
+import BannerHome from '../components/BannerHome';
+import Card from '../components/Card';
 
 const Home = () => {
     return (
         <div>
-            <Logo />
-            <Header />
-            <Banner />
-            <h1>Cool ça fonctionne</h1>
-            
+            <BannerHome />
+            <Card />     
         </div>
     );
 };
