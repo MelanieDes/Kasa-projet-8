@@ -8,7 +8,7 @@ const Card = () => {
             {logements.map((logement) => {
                 return(
                     <article key={logement.id}>
-                        <Link to={`/logement/${logement.id}`} style={{ textDecoration: "none" }}>
+                        <Link to={`/FicheLogement/${logement.id}`} style={{ textDecoration: "none" }}>
                             <div className="card-content">            
                                 <img className='card-img' src={logement.cover} alt={logement.title} />
                                 <h3 className='card-title'>{logement.title}</h3>

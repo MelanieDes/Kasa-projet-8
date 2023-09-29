@@ -16,7 +16,7 @@ function App({ dataAbout }) {
                   <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/FicheLogement/:id" element={<FicheLogement />} />
-                        <Route path="/About" element={<About dataAbout={dataAbout} />} />
+                        <Route path="/About" element={<About />} />
                         <Route path="/NotFound" element={<NotFound />} />
                         <Route path="*" element={<NotFound />} />
                   </Routes>
