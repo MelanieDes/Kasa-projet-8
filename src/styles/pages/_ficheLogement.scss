@@ -89,7 +89,7 @@
         }
     }
 
-    .collapseContainer {
+    .dropdown-main {
         display: flex;
         position: relative;
         gap: 5%;
@@ -100,15 +100,15 @@
             flex-direction: column;
           }
 
-        .collapse {
+        .dropdown-container {
             width: 100%;
 
             .headband {
                 width: 100%;
                 margin-left: 0;
             }
-
-            .description {
+            
+            .description-text {
                 width: 100%;
                 margin-left: 0;
                 margin-bottom: 50px;

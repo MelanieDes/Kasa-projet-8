@@ -56,7 +56,7 @@ const FicheLogement = () => {
               </div>
             </div>
       </div>
-      <div className="collapseContainer">
+      <div className="dropdown-main">
             {data.map((item) => (
                 <DropDown key={item.id} title={item.title} description={item.description} />
             ))}

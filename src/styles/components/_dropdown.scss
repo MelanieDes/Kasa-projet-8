@@ -1,4 +1,4 @@
-.collapse {
+.dropdown-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -23,7 +23,7 @@
       height: 30px;  
     }
   
-    .title {
+    .dropdown-title {
       margin-left: 20px;
       font-weight: 500;
       color: white;
@@ -35,7 +35,7 @@
       }
     }
   
-    .arrow {
+    .dropdown-arrow {
       width: 32px;
       height: 32px;
       margin-right: 20px;
@@ -73,7 +73,7 @@
     max-height: 0;
     transition: max-height 0.5s ease;
   
-    @media(max-width: 900px) {
+    @media(max-width:900px) {
       padding-top: 15px;
       margin-bottom: 20px;
     }
