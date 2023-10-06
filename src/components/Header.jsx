@@ -5,11 +5,15 @@ const Header = () => {
     return (
             <div className="navigation">
                 <ul className='navigation-container'>
-                    <NavLink to="/">
-                        <li>Accueil</li>
+                    <NavLink to={'/'} className={({ isActive }) =>
+                    isActive ? "nav-link nav-link-active" : "nav-link"
+                    }>
+                        Accueil
                     </NavLink>
-                    <NavLink to="/About">
-                        <li>A propos</li>
+                    <NavLink to={"/About"} className={({ isActive }) =>
+                    isActive ? "nav-link nav-link-active" : "nav-link"
+                    }>
+                        A propos
                     </NavLink>                    
                 </ul>
             </div>

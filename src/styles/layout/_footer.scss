@@ -2,15 +2,13 @@ footer{
     height: 209px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: $color-3;
     color: $color-2;
-    padding: 6% 0 1% 0;
-    margin-top: 3%;
-    // max-width: 100%;
 
-    @media (max-width: 900px) {
-        padding: 5% 0 1% 0;          
+    @media (max-width: 768px) {
+        padding: 10% 0 1% 0;          
     }
     
     p{
@@ -18,7 +16,7 @@ footer{
         font-weight: 500;
         margin-top: 2%;
         
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             font-size: 12px;  
             margin-top: 5%;
             margin-bottom: 5%;          

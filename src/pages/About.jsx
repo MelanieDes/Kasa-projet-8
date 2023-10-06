@@ -1,13 +1,13 @@
 import React from 'react';
-import BannerAbout from '../components/BannerAbout';
 import DropDown from '../components/DropDown';
 import collapseData from '../data/Collapse.json'
+import BannerImageAbout from '../assets/banner-2.png'
+import Banner from '../components/Banner';
 
-const About = () => {       
-    
+const About = () => {    
     return (
         <div>
-            <BannerAbout />
+            <Banner img={BannerImageAbout} />
             {collapseData.map((item) => (
                 <DropDown key={item.id} title={item.title} content={item.content} />
             ))}

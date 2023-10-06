@@ -4,11 +4,13 @@ import logements from "../data/Logements.json";
 import arrowLeft from "../assets/arrowLeft.png";
 import arrowRight from "../assets/arrowRight.png";
 
-const Carrousel = () => {
+
+const Carrousel = ({ selectedData }) => {
+  
     const [pictures, setPictures] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const { id } = useParams();
-
+  
     useEffect(() => {
       const selectedData = logements.find((item) => item.id === id);
       if (selectedData) {
@@ -31,20 +33,17 @@ const Carrousel = () => {
           <img src={pictures[currentIndex]} alt={id} className="carrouselPicture" />
         </div>
       );
-    }
+    }    
   
     return (
       <div className="carrousel">
-        <img
-          src={pictures[currentIndex]}
-          alt={id}
-          className="carrouselPicture"
-        />
-        <img src={arrowLeft} alt="Flèche gauche" onClick={prevPicture} className="arrow left-arrow" />
-        <img src={arrowRight} alt="Flèche droite" onClick={nextPicture} className="arrow right-arrow" />
+        <img src={pictures[currentIndex]} alt={id} className="carrouselPicture"/>
+        {pictures.length > 1 && (<img src={arrowLeft} alt="Flèche gauche" onClick={prevPicture} className="arrow left-arrow" />)}
+        {pictures.length > 1 && (<img src={arrowRight} alt="Flèche droite" onClick={nextPicture} className="arrow right-arrow" />)}        
         <div className="counter">{`${currentIndex + 1}/${pictures.length}`}</div>
       </div>
     );
+    
 };
 
 export default Carrousel;

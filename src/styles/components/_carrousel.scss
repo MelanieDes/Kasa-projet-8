@@ -7,9 +7,10 @@
     margin-bottom: 24px;
     margin-left: 50px;
     margin-right: 50px;
-
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
         height: 255px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .carrouselPicture {        
         width: 100%;
@@ -23,7 +24,7 @@
     .left-arrow {
         left: 24px;
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             width: 24px;
             height: 24px;
         }
@@ -31,7 +32,7 @@
     .right-arrow {
         right: 24px;
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             width: 24px;
             height: 24px;
         }
