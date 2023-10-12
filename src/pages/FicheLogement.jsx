@@ -5,7 +5,6 @@ import Rating from '../components/Rating';
 import Carrousel from '../components/Carrousel';
 import DropDown from '../components/DropDown';
 import Tag from '../components/Tag';
-// import '../styles/pages/ficheLogement.scss';
 
 const FicheLogement = () => {
       const { id } = useParams();
@@ -37,7 +36,7 @@ const FicheLogement = () => {
 
       return (
             <div>
-                  <Carrousel />
+                  <Carrousel pictures={selectedData.pictures} title={selectedData.title} />
                   <div className="logementHost">
                         <div className="logementTag">
                               <div className="logementTitle">

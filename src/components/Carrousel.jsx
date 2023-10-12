@@ -1,46 +1,41 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import logements from "../data/Logements.json";
+import React, { useState } from 'react';
 import arrowLeft from "../assets/arrowLeft.png";
 import arrowRight from "../assets/arrowRight.png";
 
 
-const Carrousel = ({ selectedData }) => {
+
+const Carrousel = ({ pictures, title }) => {
   
-    const [pictures, setPictures] = useState([]);
+    const picture = pictures.lenght;
     const [currentIndex, setCurrentIndex] = useState(0);
-    const { id } = useParams();
+    const pictureCounter = `${currentIndex + 1} / ${picture}`;    
   
-    useEffect(() => {
-      const selectedData = logements.find((item) => item.id === id);
-      if (selectedData) {
-        setPictures(selectedData.pictures);
-        setCurrentIndex(0);
-      }
-    }, [id]);
 
     const prevPicture = () => {
-      setCurrentIndex((currentIndex) => (currentIndex === 0 ? pictures.length - 1 : currentIndex - 1));
+      const prevIndex = currentIndex - 1
+      setCurrentIndex(prevIndex < 0 ? picture - 1 : prevIndex);      
     };
 
     const nextPicture = () => {
-      setCurrentIndex((currentIndex) => (currentIndex === pictures.length - 1 ? 0 : currentIndex + 1));
+      const nextIndex = currentIndex + 1
+      setCurrentIndex(nextIndex >= picture ? 0 : nextIndex);      
     };
 
+    const currentPicture = pictures[currentIndex];
     if (pictures.length === 1) {
-      return (
-        <div className="carrousel">
-          <img src={pictures[currentIndex]} alt={id} className="carrouselPicture" />
-        </div>
-      );
-    }    
+        return (
+            <section className="carrousel">
+                <img src={currentPicture} alt="logement" className="carrouselPicture" />
+            </section>
+        );
+    }   
   
     return (
       <div className="carrousel">
-        <img src={pictures[currentIndex]} alt={id} className="carrouselPicture"/>
-        {pictures.length > 1 && (<img src={arrowLeft} alt="Flèche gauche" onClick={prevPicture} className="arrow left-arrow" />)}
-        {pictures.length > 1 && (<img src={arrowRight} alt="Flèche droite" onClick={nextPicture} className="arrow right-arrow" />)}        
-        <div className="counter">{`${currentIndex + 1}/${pictures.length}`}</div>
+        <img src={currentPicture} alt={title} className="carrouselPicture"/>
+        <img src={arrowLeft} alt="Flèche gauche" onClick={prevPicture} className="arrow left-arrow" />
+        <img src={arrowRight} alt="Flèche droite" onClick={nextPicture} className="arrow right-arrow" />    
+        <div className="counter">{pictureCounter}</div>
       </div>
     );
     
