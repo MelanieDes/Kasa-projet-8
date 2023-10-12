@@ -6,9 +6,9 @@ import arrowRight from "../assets/arrowRight.png";
 
 const Carrousel = ({ pictures, title }) => {
   
-    const picture = pictures.lenght;
+    const picture = pictures.length;
     const [currentIndex, setCurrentIndex] = useState(0);
-    const pictureCounter = `${currentIndex + 1} / ${picture}`;    
+    const pictureCounter = `${currentIndex + 1} / ${picture}`   
   
 
     const prevPicture = () => {
