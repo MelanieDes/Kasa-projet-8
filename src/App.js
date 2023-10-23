@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Logo from './components/Logo';
 import Footer from './components/Footer';
 
-function App({ dataAbout }) {
+function App() {
       return (
             <BrowserRouter>
                   <Logo />
